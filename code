@@ -1,0 +1,32 @@
+
+function mintNFT(name, artist, dateCreated, description) {
+    const NFT = {
+        name: name,
+        artist: artist,
+        dateCreated: dateCreated,
+        description: description
+    };
+    NFTs.push(NFT);
+}
+
+
+function listNFTs() {
+    for (let i = 0; i < NFTs.length; i++) {
+        console.log(`Name: ${NFTs[i].name}`);
+        console.log(`Artist: ${NFTs[i].artist}`);
+        console.log(`Date Created: ${NFTs[i].dateCreated}`);
+        console.log(`Description: ${NFTs[i].description}`);
+        console.log('--------------------------');
+    }
+}
+
+function getTotalSupply() {
+    console.log(`Total Supply: ${NFTs.length}`);
+}
+
+mintNFT("Sunset Bliss", "Alice Smith", "2024-05-17", "A beautiful sunset over the ocean.");
+mintNFT("Mountain Majesty", "Bob Jones", "2024-04-23", "A majestic mountain view in autumn.");
+mintNFT("Urban Jungle", "Charlie Davis", "2024-03-12", "A bustling cityscape with vibrant lights.");
+
+listNFTs();
+getTotalSupply();
