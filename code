@@ -1,32 +1,42 @@
 
-function mintNFT(name, artist, dateCreated, description) {
+// create a variable to hold NFTs
+let NFTs = [];
+
+// this function will take in some values as parameters, create an
+
+function mintNFT(name, creator, year, description, owner) {
     const NFT = {
         name: name,
-        artist: artist,
-        dateCreated: dateCreated,
-        description: description
+        creator: creator,
+        year: year,
+        description: description,
+        owner: owner
     };
     NFTs.push(NFT);
 }
 
-
+// loop that will go through an array of NFT's and print metadata with console.log()
 function listNFTs() {
     for (let i = 0; i < NFTs.length; i++) {
         console.log(`Name: ${NFTs[i].name}`);
-        console.log(`Artist: ${NFTs[i].artist}`);
-        console.log(`Date Created: ${NFTs[i].dateCreated}`);
+        console.log(`Creator: ${NFTs[i].creator}`);
+        console.log(`Year: ${NFTs[i].year}`);
         console.log(`Description: ${NFTs[i].description}`);
+        console.log(`Owner: ${NFTs[i].owner}`);
         console.log('--------------------------');
     }
 }
 
+// print the total number of NFTs minted to the console
 function getTotalSupply() {
     console.log(`Total Supply: ${NFTs.length}`);
 }
 
-mintNFT("Sunset Bliss", "Alice Smith", "2024-05-17", "A beautiful sunset over the ocean.");
-mintNFT("Mountain Majesty", "Bob Jones", "2024-04-23", "A majestic mountain view in autumn.");
-mintNFT("Urban Jungle", "Charlie Davis", "2024-03-12", "A bustling cityscape with vibrant lights.");
+mintNFT("Sunset Bliss", "Alice Smith", 2024, "A beautiful sunset over the ocean.", "Alice");
+mintNFT("Mountain Majesty", "Bob Jones", 2023, "A majestic mountain view in autumn.", "Bob");
+mintNFT("Urban Jungle", "Charlie Davis", 2022, "A bustling cityscape with vibrant lights.", "Charlie");
+mintNFT("Ocean Depths", "Diana Prince", 2025, "A serene underwater scene with colorful marine life.", "Diana");
+mintNFT("Desert Mirage", "Evan Williams", 2021, "An ethereal mirage over a vast desert landscape.", "Evan");
 
 listNFTs();
 getTotalSupply();
